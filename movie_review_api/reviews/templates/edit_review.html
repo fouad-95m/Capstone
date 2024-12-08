@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Edit Review</h2>
+    <form id="edit-review-form" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="movie_name">Movie Name:</label>
+            <input type="text" id="movie_name" name="movie_name" value="{{ review.movie_name }}" required>
+        </div>
+        <div>
+            <label for="review_text">Review:</label>
+            <textarea id="review_text" name="review_text" required>{{ review.review_text }}</textarea>
+        </div>
+        <div>
+            <label for="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" value="{{ review.rating }}" min="1" max="10" required>
+        </div>
+        <button type="submit">Update Review</button>
+    </form>
+{% endblock %}

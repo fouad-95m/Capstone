@@ -1,0 +1,12 @@
+<!-- movie_reviews_list.html -->
+<h2>Reviews for Movie</h2>
+<ul>
+    {% for review in reviews %}
+        <li>
+            <h4>{{ review.movie.title }}</h4>
+            <p>{{ review.content }}</p>
+            <p>Rating: {{ review.rating }}</p>
+            <a href="{% url 'review_detail' review.pk %}">View Review</a>
+        </li>
+    {% endfor %}
+</ul>

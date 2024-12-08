@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Movie Review API</h1>
+        <p class="lead">This is a simple API for managing movie reviews.</p>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                Available Endpoints
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Movie Endpoints:</h5>
+                <ul>
+                    <li><a href="/api/movies/" class="btn btn-link">GET /api/movies/</a> - List all movies</li>
+                    <li><a href="/api/movies/{id}/" class="btn btn-link">GET /api/movies/{id}/</a> - Get details of a specific movie</li>
+                </ul>
+
+                <h5 class="card-title mt-3">Review Endpoints:</h5>
+                <ul>
+                    <li><a href="/api/reviews/" class="btn btn-link">GET /api/reviews/</a> - List all reviews</li>
+                    <li><a href="/api/reviews/{id}/" class="btn btn-link">GET /api/reviews/{id}/</a> - Get details of a specific review</li>
+                    <li><a href="/api/reviews/new/" class="btn btn-link">POST /api/reviews/new/</a> - Create a new review</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                User Authentication
+            </div>
+            <div class="card-body">
+                <p>If you are not logged in, please use the following options:</p>
+                <a href="/login/" class="btn btn-primary">Login</a>
+                <a href="/signup/" class="btn btn-secondary">Sign Up</a>
+                <a href="/logout/" class="btn btn-danger">Logout</a>
+            </div>
+        </div>
+
+        <footer class="mt-5">
+            <p class="text-center">Movie Review API - Created by Fouad</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

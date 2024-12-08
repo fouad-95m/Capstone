@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ review.movie.title }} Review - Movie Review API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">{{ review.movie.title }} Review</h2>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title">Rating: {{ review.rating }} / 10</h5>
+                <p class="card-text">{{ review.content }}</p>
+                <p class="card-text"><small>Reviewed by: {{ review.author.username }}</small></p>
+                
+                {% if user == review.author %}
+                    <a href="{% url 'review_update' review.pk %}" class="btn btn-warning">Edit Review</a>
+                    <a href="{% url 'review_delete' review.pk %}" class="btn btn-danger">Delete Review</a>
+                {% endif %}
+                
+                <a href="{% url 'review_list' %}" class="btn btn-secondary mt-3">Back to Reviews</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0-alpha1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
